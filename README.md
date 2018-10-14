@@ -16,6 +16,9 @@ The program lets a user publish a pitch
 * Example input: Create a pitch
 * Example output: Redirects user to form to create a pitch
 
+## Live Site
+https://pitch-perfect-ke.herokuapp.com/
+
 ## Prerequisites
 * Python
 * Pip
