@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- Content block -->
+{%block content%}
+<div class="container">
+    <div class="row">
+        <h3>{{pitch.pitch_title}}</h3>
+        <hr>
+        <p>{{pitch.pitch_content}}</p>
+    </div>
+    <div class="row">
+        <h4>Comments</h4>
+        <hr>
+        {% if current_user.is_authenticated %}
+            {{ wtf.quick_form(comment_form) }}
+        {%endif%}
+        {{macro.displayComments(comments)}}
+    </div>
+
+</div>
+{%endblock%}
