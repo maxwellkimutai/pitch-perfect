@@ -31,7 +31,7 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Kace:New Pasword@localhost/pitchapp_test'
 
 class DevConfig(Config):
     '''

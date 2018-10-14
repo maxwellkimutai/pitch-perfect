@@ -59,6 +59,8 @@ class Pitch(db.Model):
     category = db.Column(db.String)
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    likes = db.Column(db.Integer)
+    dislikes = db.Column(db.Integer)
 
     comments = db.relationship('Comment',backref = 'pitch_id',lazy = "dynamic")
 
@@ -76,7 +78,7 @@ class Pitch(db.Model):
         pitch = Pitch.query.filter_by(id=id).first()
 
         return pitch
-
+        
     @classmethod
     def count_pitches(cls,uname):
         user = User.query.filter_by(username=uname).first()

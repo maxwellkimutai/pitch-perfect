@@ -8,22 +8,36 @@
 {%endblock%}
 <!-- Content block -->
 {%block content%}
-<div class="container">
+<div class="jumbotron text-center" style="background-color: #3d7aaf; color: #fff; padding: 100px 25px;">
+    <h1>Pitch Perfect</h1>
+</div>
+<div class="container" style="padding-bottom: 20px;">
     <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create pitch</a>
 </div>
 
 <div class="container">
-    <div class="col-md-12">
-        <h3>Interview Pitches</h3>
-            {{macro.displayPitches(interview)}}
-    </div>
-    <div class="col-md-12">
-        <h3>Product Pitches</h3>
-            {{macro.displayPitches(product)}}
-    </div>
-    <div class="col-md-12">
-        <h3>Promotion Pitches</h3>
-            {{macro.displayPitches(promotion)}}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="well well-lg">
+                <h3>Interview Pitches</h3>
+                <p>These are short pitches that will help you ace your interview in just a minute.</p>
+                <a href="{{url_for('main.interview_pitches')}}" class="btn btn-primary -center">View</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-lg">
+                <h3>Product Pitches</h3>
+                <p>These are short pitches that will help you ace your product presentation in just a minute.</p>
+                <a href="{{url_for('main.product_pitches')}}" class="btn btn-primary -center">View</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-lg">
+                <h3>Promotion Pitches</h3>
+                <p>These are short pitches that will help you ace your promotion presentation in just a minute.</p>
+                <a href="{{url_for('main.promotion_pitches')}}" class="btn btn-primary -center">View</a>
+            </div>
+        </div>
     </div>
 </div>
 {%endblock%}

@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-light" role="navigation" style="margin-bottom:0; border-bottom: 1px solid">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,20 +16,13 @@
                     <li><a href="{{url_for('main.product_pitches')}}">Product</a></li>
                     <li><a href="{{url_for('main.promotion_pitches')}}">Promotion</a></li>
                 </ul>
-                <!-- <ul class="nav navbar-nav navbar-right">
-                  {% if current_user.is_authenticated %}
-                  <li><a href="{{url_for('main.profile',uname=current_user.username)}}">{{current_user.username}}</a></li>
-                  <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-                  {% else %}
-                  <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-                  {%endif%}
-                </ul> -->
 
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{current_user.username| capitalize}} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+                            <li><a href="{{url_for('main.user_pitches',uname=current_user.username)}}">My Pitches</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
                         </ul>
