@@ -8,7 +8,6 @@ class PitchModelTest(unittest.TestCase):
         self.new_pitch = Pitch(id=1,pitch_title='Test',pitch_content='This is a test pitch',category="interview",user = self.user_James,likes=0,dislikes=0)
 
     def tearDown(self):
-        Comment.query.delete()
         Pitch.query.delete()
         User.query.delete()
 
